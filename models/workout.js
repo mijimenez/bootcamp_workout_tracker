@@ -17,6 +17,13 @@ const workoutSchema = new Schema({
   ]
 });
 
+workoutSchema.virtual("totalDuration").get(function() {
+  // Add duration of each object by referring to the first index
+  return this.exercises.reduce(function(total, exercise) {
+    return total + exercise.duration
+  }, 0);
+})
+
 const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;
