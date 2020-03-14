@@ -12,6 +12,7 @@ async function initWorkout() {
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
+    // console.log(workoutSummary);
 
     renderWorkoutSummary(workoutSummary);
   } else {
@@ -21,6 +22,7 @@ async function initWorkout() {
 
 function tallyExercises(exercises) {
   const tallied = exercises.reduce((acc, curr) => {
+    console.log(curr);
     if (curr.type === "resistance") {
       acc.totalWeight = (acc.totalWeight || 0) + curr.weight;
       acc.totalSets = (acc.totalSets || 0) + curr.sets;
@@ -30,6 +32,7 @@ function tallyExercises(exercises) {
     }
     return acc;
   }, {});
+  // console.log(tallied);
   return tallied;
 }
 
@@ -40,7 +43,6 @@ function formatDate(date) {
     month: "long",
     day: "numeric"
   };
-
   return new Date(date).toLocaleDateString(options);
 }
 

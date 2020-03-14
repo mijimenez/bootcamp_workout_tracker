@@ -126,7 +126,7 @@ let workoutSeed = [
     day: Date(Date.now()),
     exercises: [
       {
-        type: "resistance",
+        type: "cardio",
         name: "Bench",
         duration: 30,
         distance: 2
