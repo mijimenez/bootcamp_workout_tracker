@@ -40,7 +40,7 @@ npm start
 - I want a way to document my workout plan
 - and edit my workout plan later
 
-## Acceptance Criteria 1
+## Acceptance Criteria
 - Given that the user loads the page
 - they should be given the option to create a new workout
 - or continue with their last workout
