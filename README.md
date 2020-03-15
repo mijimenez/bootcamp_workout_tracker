@@ -5,7 +5,7 @@ An application that allows you to view, create and track daily workouts.
 
 ## Screenshot of Application
 
-![Desktop](./public/images/demo.png)
+![Desktop](./public/images/demo.gif)
 
 ## Live Link
 - Launch the application [here](https://hidden-oasis-60109.herokuapp.com/)
