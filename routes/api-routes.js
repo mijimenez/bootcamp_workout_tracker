@@ -4,7 +4,7 @@ const Workout = require("../models/workout.js");
 // Post all workouts
 router.get("/api/workouts", (req, res) => {
     Workout.find({})
-      .sort({ type: -1 })
+      .sort({ day: -1 })
       .then(data => {
         res.json(data);
       })
@@ -39,17 +39,18 @@ router.get("/api/workouts/range", (req, res) => {
       });
 });
 
-// Update past workout by id
+// Update workout by id
 router.put("/api/workouts/:id", (req, res) => {
-  console.log(req.params.id);
-  console.log(req.body);
-  Workout.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } })
-      .then(data => {
-          res.json(data);
-      })
-      .catch(err => {
-          res.status(400).json(err);
-      });
+  Workout.updateOne(
+    { _id: req.params.id },
+    { $push: { exercises: req.body } }
+  )
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err);
+    });
 });
 
 
