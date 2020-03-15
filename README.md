@@ -1,11 +1,24 @@
 # Workout Tracker
 
+An application that allows you to view, create and track daily workouts.
+
+
 ## Screenshot of Application
 
 ![Desktop](./public/images/demo.png)
 
 ## Live Link
 - Launch the application [here](----)
+
+## Instructions for local install
+
+Initialize with required npm packages using this command:
+
+```sh
+npm install
+npm run seed
+npm start
+```
 
 ## Technologies Used
 - HTML5
